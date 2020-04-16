@@ -1,0 +1,13 @@
+docker ps : will show the ids of containers ;pick one
+docker inspect <ID> | less
+docker inspect --format '{{.NetworkSettings.IPAddress}}' containername
+docker inspect --format '{{.State.Pid}}' containername
+ps aux for find the pid of the container
+
+
+//Sample busybox
+docker run busybox
+docker run -it busybox  : runs in iterative mode ctrlp + ctrlq leaves the container running , exit will terminate the container
+
+docker run -d -p 8080:80 --name='mycontainername' -v localfolder:/var/www/html httpd  ::: httpd image curl localhost:8080 to check result
+                 
